@@ -11,4 +11,4 @@ I replaced the checkerboard context model in the original ELIC with Multistage C
 
 Preparing pre-trained models for different bitrate...
 
->  I will release the codes while the results meets expectations.
+I will release the codes while the results meets expectations.
