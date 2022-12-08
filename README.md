@@ -5,7 +5,7 @@ This repository is an unofficial PyTorch implementation variants of ELIC: effici
 
 ## About
 
-I replaced the checkerboard context model in the original ELIC with Multistage Context Model (MCM) in TinyLIC for further enhancing spatial context information. When implementing other modules, my reimplementation version is as consistent as possible with the description in the ELIC.
+I replaced the checkerboard context model in the original ELIC with Multistage Context Model (MCM) in TinyLIC to further enhance spatial context information. My reimplementation for other modules is as consistent as possible with the description in the ELIC.
 
 ## Current Progress
 
