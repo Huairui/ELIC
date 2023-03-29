@@ -376,8 +376,7 @@ def main(argv):
         net = CustomDataParallel(net)
 
     optimizer, aux_optimizer = configure_optimizers(net, args)
-    lr_scheduler = optim.lr_scheduler.MultiStepLR(
-        optimizer, milestones=[400, 600], gamma=0.1)
+    lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, "min", factor=0.5,patience=20)
     criterion = RateDistortionLoss(
         lmbda=quality_lambda_dict[int(args.quality_level)])
 
@@ -405,7 +404,7 @@ def main(argv):
             args.clip_max_norm,
         )
         loss = test_epoch(epoch, test_dataloader, net, criterion)
-        lr_scheduler.step()
+        lr_scheduler.step(loss)
 
         is_best = loss < best_loss
         best_loss = min(loss, best_loss)
